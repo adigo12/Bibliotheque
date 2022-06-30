@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Details</title>
+<link rel="styleSheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+<ul th:replace="page-layout :: userNavBar"></ul>
+	
+	<div class="container">
+	<h3>User Info:</h3>
+				
+				<div class="row">
+						<div class="col-50">	
+							Username:
+						</div>	
+						<div class="col-75">
+							<text th:text="${currentUser.userName}">
+						</div>
+				</div>	
+				
+				<div class="row">
+						<div class="col-50">	
+							First name: 
+						</div>	
+						<div class="col-75">
+							<text th:text="${currentUser.firstName}"/>
+						</div>
+				</div>	
+							
+				
+				<div class="row">
+						<div class="col-50">	
+							Last name:
+						</div>	
+						<div class="col-75">
+							<text th:text="${currentUser.lastName}">
+						</div>
+				</div>	
+				
+				<div class="row">
+						<div class="col-50">	
+							Email:
+						</div>	
+						<div class="col-75">
+							<text th:text="${currentUser.email}">
+						</div>
+				</div>	
+				
+				<div class="row">
+					<div class="col-50">
+						Address:
+					</div>	
+					<div class="col-75">
+						<text th:text="${currentUser.address}">
+					</div>
+				</div>	
+				
+				<div class="row">
+					<div class="col-50">
+						City:
+					</div>
+					<div class="col-75">
+						<text th:text="${currentUser.city}">
+					</div>
+				</div>	
+				
+				<div class="row">
+					<div class="col-50">
+						Phone number:
+					</div>
+					<div class="col-75">
+						<text th:text="${currentUser.phoneNumber}">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-50">
+						Wallet:
+					</div>
+					<div class="col-75">
+						<text th:text="${'Rs. ' +currentUser.wallet+'0'}">
+					</div>
+				</div>
+				<div>
+				<form th:action="@{/user/addmoney}" th:method="PUT">	
+					
+					<input type="submit" value="Add Money" style="width: 200px">
+				</form>
+				</div>
+	</div>
+
+	
+</body>
+</html>
